@@ -35,7 +35,7 @@ def advise(player_cards, dealer_upcard):
     else:
         return "Hit"
     
-def ss(fileName,XCords,YCords,Width,Height):
+def ss(fileName,XCords,YCords,Width,Height): ## screen shot so the image prossexxing can see section of screen the card numbers are
     global width
     global height
     # Specify the coordinates (x, y) for the screenshot
