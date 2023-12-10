@@ -61,7 +61,7 @@ while True:
     ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
     ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
 
-    time.sleep(2) # no real point of this becuaee image proccessing takes around about that timne 
+    time.sleep(2) # no real point of this becuaee image proccessing takes around about that timne so could remove in future.
     ss("DealersCards.png",1200,275,1000,30)
     reader = easyocr.Reader(['en'])
     DealersTotal = reader.readtext(r"C:\Users\Spen\Desktop\gambling\DealersCards.png") ### NEED TO CHANGE PER USER, PYTHON BEING RETARED
@@ -69,11 +69,11 @@ while True:
 
     ss("PlayersCards.png",1200,550,1000,40) 
     ### IMAGE REC WASNT READING TEXT PROPERLY, SO I HAD TO DO THIS SHIT AHHHHHHHHHHHHHHHHHHH
-    ### im the future ill use a ai model to see and detect cards instead of this position shit 
+    ### im the future ill use a ai model to see and detect cards instead of this position shit but this will have to do
     reader = easyocr.Reader(['en'])
     PlayersTotal = reader.readtext(r"C:\Users\Spen\Desktop\gambling\PlayersCards.png") ### SAME AS PREVIOUS
     print(PlayersTotal)
-    strPlayer = str(PlayersTotal)
+    strPlayer = str(PlayersTotal) ### need to clean up string, becuaseeee this lib is a fucking pain in the ass
     firstCleanPlayers = strPlayer.replace("YOU HAVE A ", "") ### such a bad way to do this. idc tho
     print(firstCleanPlayers)
     cleanPlayers = re.findall(r"'(\d+(?:\.\d+)?)'", str(firstCleanPlayers))
@@ -82,4 +82,4 @@ while True:
     player_cards = cleanPlayers
     dealer_upcard = cleanDealers
     advice = advise(player_cards, dealer_upcard)
-    print(f"Advice: {advice}")
+    print(f"Advice: {advice}") ### im so tired, tmr ill make it click the buttons on the website using, uh https, keyboard input or somthing i really havent looked into it 
