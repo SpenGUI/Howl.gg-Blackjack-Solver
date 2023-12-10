@@ -4,7 +4,7 @@ import easyocr
 from PIL import Image
 import re
 
-##### WARNING: I BEG YOU DONT USE THIS FOR REAL GAMBLING, AS THIS ISNT 100% ITS JUST A STRAT
+##### WARNING: DONT USE THIS FOR REAL GAMBLING, AS THIS ISNT 100% ITS JUST A STRAT
 ##### THIS IS ALSO BASED OF A FRIENDS STRAT TRANLATED INTO PYTHON SO TAKE THE RESULTS WITH A 
 ##### GRAIN OF SALT
 
@@ -54,12 +54,8 @@ def ss(fileName,XCords,YCords,Width,Height):
 
 while True:
     ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
-    ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
-    ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
-    ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
-    ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
-    ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
-    ##### POSITION ARE HARDCODED, WORKS BEST ON STANDERED 1080P, HOWL.GG BACKJACK, NOT FULLSCREEN
+
+    ### get delaers cards
 
     time.sleep(2) # no real point of this becuaee image proccessing takes around about that timne so could remove in future.
     ss("DealersCards.png",1200,275,1000,30)
@@ -67,6 +63,8 @@ while True:
     DealersTotal = reader.readtext(r"C:\Users\Spen\Desktop\gambling\DealersCards.png") ### NEED TO CHANGE PER USER, PYTHON BEING RETARED
     cleanDealers = re.findall(r"'(\d+(?:\.\d+)?)'", str(DealersTotal))
 
+    ### get players cards
+    
     ss("PlayersCards.png",1200,550,1000,40) 
     ### IMAGE REC WASNT READING TEXT PROPERLY, SO I HAD TO DO THIS SHIT AHHHHHHHHHHHHHHHHHHH
     ### im the future ill use a ai model to see and detect cards instead of this position shit but this will have to do
@@ -83,3 +81,6 @@ while True:
     dealer_upcard = cleanDealers
     advice = advise(player_cards, dealer_upcard)
     print(f"Advice: {advice}") ### im so tired, tmr ill make it click the buttons on the website using, uh https, keyboard input or somthing i really havent looked into it 
+
+
+    ### Remember, the house always wins
